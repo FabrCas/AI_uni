@@ -1,0 +1,40 @@
+(c) Discuss the forward planning process to
+reach the goal, using a perfect heuristic
+that gives for each state the number of
+steps to reach the goal; for each step,
+show the current state, the applicable
+actions and the state resulting from the
+application of the chosen action.
+
+answer: the predicates that i will show are the one more interesting, i'm avoiding to specify
+the grid predicates used to give the structure of the map in which the agent acts.
+hence the predicates represented are: (at ?pos)  (visitors ?pos) (switcher ?pos) (wet_floor ?pos)
+(audiolog ?positionVisitors) (lightoff ?switcher)
+ROOT A = INIT STATE = {(at pos11) (visitors pos01) (visitors pos03) (visitors pos13) (switcher pos12) (wet_floor pos02) (lightoff switcher1)}
+possible actions: move
+B = Succ(A,move) = {(at pos12) (visitors pos01) (visitors pos03) (visitors pos13) (switcher pos12) (wet_floor pos02) (lightoff switcher1)}
+possible actions: move, switchLight
+C = Succ(B,switchLight) = {(at pos12) (visitors pos01) (visitors pos03) (visitors pos13) (switcher pos12) (wet_floor pos02)}
+possible actions: move
+D = Succ(C,move) = {(at pos11) (visitors pos01) (visitors pos03) (visitors pos13) (switcher pos12) (wet_floor pos02)}
+possible actions: move
+E = Succ(D,move) = {(at pos01) (visitors pos01) (visitors pos03) (visitors pos13) (switcher pos12) (wet_floor pos02)}
+possible actions: move, audiolog
+F = Succ(E,audiolog) = {(at pos01) (visitors pos01) (visitors pos03) (visitors pos13) (switcher pos12) (wet_floor pos02) (audiolog pos01)}
+possible actions: move
+G = Succ(F,move) = {(at pos11) (visitors pos01) (visitors pos03) (visitors pos13) (switcher pos12) (wet_floor pos02) (audiolog pos01)}
+possible actions: move
+H = Succ(G,move) = {(at pos12) (visitors pos01) (visitors pos03) (visitors pos13) (switcher pos12) (wet_floor pos02) (audiolog pos01)}
+possible actions: move
+H = Succ(G,move) = {(at pos13) (visitors pos01) (visitors pos03) (visitors pos13) (switcher pos12) (wet_floor pos02) (audiolog pos01)}
+possible actions: move, audiolog
+I = Succ(H,audiolog) = {(at pos13) (visitors pos01) (visitors pos03) (visitors pos13) (switcher pos12) (wet_floor pos02) (audiolog pos01) (audiolog pos13)}
+possible actions: move
+J = Succ(I,move) = {(at pos14) (visitors pos01) (visitors pos03) (visitors pos13) (switcher pos12) (wet_floor pos02) (audiolog pos01) (audiolog pos13)}
+possible actions: move
+K = Succ(J,move) = {(at pos04) (visitors pos01) (visitors pos03) (visitors pos13) (switcher pos12) (wet_floor pos02) (audiolog pos01) (audiolog pos13)}
+possible actions: move
+L = Succ(K,move) = {(at pos03) (visitors pos01) (visitors pos03) (visitors pos13) (switcher pos12) (wet_floor pos02) (audiolog pos01) (audiolog pos13)}
+possible actions: move, audiolog
+M = Succ(L,audiolog) = {(at pos14) (visitors pos01) (visitors pos03) (visitors pos13) (switcher pos12) (wet_floor pos02) (audiolog pos01) (audiolog pos13) (audiolog pos03)}
+M = FINAL_STATE

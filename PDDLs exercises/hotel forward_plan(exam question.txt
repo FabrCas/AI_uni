@@ -1,0 +1,18 @@
+3) the forward planning (are avoid the static fluents used to model the hotel, like: adj() room(), guests())
+
+Root A =INIT={at(pos12), dirty(pos21), dirty(pos41), dirty(pos43), clean(pos11), clean(pos13), clean(pos43)}
+possible actions A: move
+B = Succ(A,move) = {at(pos22), dirty(pos12), dirty(pos41), dirty(pos43), clean(pos11), clean(pos13), clean(pos43)}
+possible actions B: move, enter
+C= Succ(B,enter) = {at(pos12), dirty(pos12), dirty(pos41), dirty(pos43), clean(pos11), clean(pos13), clean(pos43)}
+possible actions C = move, clean
+D = Succ(C,clean) = {at(pos12), clean(pos12), dirty(pos41), dirty(pos43), clean(pos11), clean(pos13), clean(pos43)}
+possible actions: move
+E = Succ(D,move) = {at(pos22), clean(pos12), dirty(pos41), dirty(pos43), clean(pos11), clean(pos13), clean(pos43)}
+possible actions: move, enter
+F = Succ(E,move) = {at(pos33), clean(pos12), dirty(pos41), dirty(pos43), clean(pos11), clean(pos13), clean(pos43)}
+possible actions: move, enter
+G = Succ(F,enter) = {at(pos43), clean(pos12), dirty(pos41), dirty(pos43), clean(pos11), clean(pos13), clean(pos43)}
+possible actions: move, clean
+H = Succ(G,clean) = {at(pos22), clean(pos12), dirty(pos41), clean(pos43), clean(pos11), clean(pos13), clean(pos43)}
+FINAL_STATE = H

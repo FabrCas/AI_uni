@@ -1,0 +1,14 @@
+(define (domain robot-arm)
+(:requirements :adl)
+
+(:predicates (pos ?pos) (glass ?glass) (isEmpty ?pos) (at ?glass ?pos)
+)
+
+(:action move 
+:parameters (?from ?to ?what)
+:precondition (and (pos ?from) (pos ?to) (glass ?what) (isEmpty ?to) (at ?what ?from)
+)
+:effect (and (not(at ?what ?from)) (at ?what ?to) (isEmpty ?from) (not (isEmpty ?to)))
+)
+
+)
