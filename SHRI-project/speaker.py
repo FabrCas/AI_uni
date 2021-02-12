@@ -40,5 +40,4 @@ class Speaker():
 
     def speak(self, message):
         self.engine.say(message)
-        #print(message)
         self.engine.runAndWait()  # to stop use engine.stop()

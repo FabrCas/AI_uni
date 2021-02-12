@@ -14,6 +14,7 @@ class Listener():
 
 
     def listen(self):
+        self.ok = True
         recognizer = sr.Recognizer()
         # audio input taken directly from the microphone (online manner)
         with sr.Microphone() as audioSource:
