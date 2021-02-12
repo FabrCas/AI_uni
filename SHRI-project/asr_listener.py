@@ -1,4 +1,6 @@
 import speech_recognition as sr
+from colorama import init, Fore, Back, Style
+
 class Listener():
     def __init__(self):
         self.ok = True
@@ -26,9 +28,9 @@ class Listener():
             try:
                 # set as recognizer the google one
                 text = recognizer.recognize_google(audio)
-                print("audio input: {}".format(text))
+                print(Fore.LIGHTGREEN_EX +"audio input: {}".format(text))
             except:
-                print("audio input not recognized, try again please")
+                print(Fore.LIGHTRED_EX + "audio input not recognized, try again please")
                 self.ok = False
 
         return text

@@ -31,9 +31,14 @@ class Speaker():
             self.engine.say('The quick brown fox jumped over the lazy dog.')
         self.engine.runAndWait()
 
-    def speak(self):
+    def speakQueue(self):
         for message in self.messages:
             message = message + ".\n"
             self.engine.say(message)
             print(message)
         self.engine.runAndWait()  #to stop use engine.stop()
+
+    def speak(self, message):
+        self.engine.say(message)
+        #print(message)
+        self.engine.runAndWait()  # to stop use engine.stop()
