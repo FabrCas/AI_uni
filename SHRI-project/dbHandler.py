@@ -49,6 +49,13 @@ def deleteByIdODB(id):
     conn.commit()
     conn.close()
 
+def deleteByNameODB(name):
+    conn = sqlite3.connect(OFFICEDATABASE)
+    c = conn.cursor()
+    c.execute("DELETE FROM office where object = ?",(name,))
+    conn.commit()
+    conn.close()
+
 # ********************************************* AGENDA DB *****************************************
 def creation_agendaDB():
     conn = sqlite3.connect(AGENDADATABASE)
@@ -94,6 +101,13 @@ def deleteByIdADB(id):
     conn.commit()
     conn.close()
 
+def deleteByEventADB(event):
+    conn = sqlite3.connect(AGENDADATABASE)
+    c = conn.cursor()
+    c.execute("DELETE FROM agenda where EVENT = ?",(event,))
+    conn.commit()
+    conn.close()
 
-items = doQueryODB("SELECT position FROM office WHERE object == 'pen'")
-print (items)
+
+#items = doQueryODB("SELECT position FROM office WHERE object == 'pen'")
+#print (items)
