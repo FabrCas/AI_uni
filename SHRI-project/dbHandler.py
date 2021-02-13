@@ -33,6 +33,7 @@ def showRowsODB():
     c.execute("SELECT * FROM office")
     items = c.fetchall()
     print(items)
+    return  items
 
 def doQueryODB(query):
     conn = sqlite3.connect(OFFICEDATABASE)
@@ -77,6 +78,7 @@ def showRowsADB():
     c.execute("SELECT * FROM agenda")
     items = c.fetchall()
     print(items)
+    return items
 
 def doQueryADB(query):
     conn = sqlite3.connect(AGENDADATABASE)
@@ -92,3 +94,6 @@ def deleteByIdADB(id):
     conn.commit()
     conn.close()
 
+
+items = doQueryODB("SELECT position FROM office WHERE object == 'pen'")
+print (items)

@@ -4,7 +4,7 @@ class Speaker():
     def __init__(self):
         # get an engine instance or the speech synthesis
         self.engine = pyttsx3.init()
-        self.engine.setProperty('rate', 125)   # default value is 200
+        self.engine.setProperty('rate', 150)   # default value is 200
         self.engine.setProperty('volume',0.75) # default value is 1.00, range = [0. 1]
         voices = self.engine.getProperty('voices')
         self.engine.setProperty('voice', voices[1].id)  # set the english synthesizer
@@ -41,3 +41,4 @@ class Speaker():
     def speak(self, message):
         self.engine.say(message)
         self.engine.runAndWait()  # to stop use engine.stop()
+

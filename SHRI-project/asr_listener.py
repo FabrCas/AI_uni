@@ -21,7 +21,7 @@ class Listener():
             print("Speak now: ")
             text = ""
             # adjust the energy threshold dynamically
-            recognizer.adjust_for_ambient_noise(audioSource, duration=1)
+            recognizer.adjust_for_ambient_noise(audioSource, duration=2)
             # set the minimum length of silence after having spoken, it means the end of registration
             recognizer.pause_threshold = 1
             # sample the audio source
