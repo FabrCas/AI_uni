@@ -24,7 +24,7 @@ class Agent():
                                     "what do you know about the office", "tell me what you know about the office"
                                     "what do you know about this office", "what do you know about this office"],
 
-            "ask_about_object":["where is the (?P<object_name>[\w\s]+)"],
+            "ask_about_object":["where is the (?P<object_name>[\w\s]+)","tell me information about (?P<object_name>[\w\s]+)"],
                                 #"talk to me about (?P<object_name>[a-z]+)",  "tell me about what you know of (?P<object_name>[a-z]+)",
                                 #   "what do you know about (?P<object_name>[a-z]+)", "tell me what you know about (?P<object_name>[a-z]+)"],
 
@@ -65,7 +65,7 @@ class Agent():
         return None, 0, match
 
     def parse(self,command):
-        print("parsing...")
+        # print("parsing...")
         key, element, match= self.match_template(command)
         if key:
             self.processResponse(key, self.templates[key][element], command, match)
@@ -284,10 +284,6 @@ class Agent():
                     msg = "Therefore, repeat please"
                     print(Fore.LIGHTYELLOW_EX + msg)
                     self.speaker.speak(msg)
-
-
-
-
 
     # **************************************** useful predefined message **************************************
     def attendApprovation(self):

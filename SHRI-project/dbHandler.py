@@ -32,7 +32,6 @@ def showRowsODB():
     c = conn.cursor()
     c.execute("SELECT * FROM office")
     items = c.fetchall()
-    print(items)
     return  items
 
 def doQueryODB(query):
@@ -84,7 +83,6 @@ def showRowsADB():
     c = conn.cursor()
     c.execute("SELECT * FROM agenda")
     items = c.fetchall()
-    print(items)
     return items
 
 def doQueryADB(query):
