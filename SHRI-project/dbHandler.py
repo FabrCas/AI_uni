@@ -109,3 +109,8 @@ def deleteByEventADB(event):
 
 #items = doQueryODB("SELECT position FROM office WHERE object == 'pen'")
 #print (items)
+
+
+#print(showRowsODB())
+
+

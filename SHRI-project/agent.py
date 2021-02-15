@@ -17,12 +17,11 @@ class Agent():
             "shutdown": ['bye', 'exit', 'goodbye', 'bye-bye', 'see you soon'],
 
             # ******************************** office template *********************************************************
-            "ask_all_about_office":["what do you know about this office", "describe what you know of the office",
+            "ask_all_about_office":["what do you know about this office",  "what do you know about the office",
                                     "tell me something about this office",
                                     "talk to me about this office",  "tell me about what you know of this office"
                                     "tell me something about the office", "tell me something about the office"
-                                    "what do you know about the office", "tell me what you know about the office"
-                                    "what do you know about this office", "what do you know about this office"],
+                                    "describe what you know of the office", "tell me what you know about the office"],
 
             "ask_about_object":["where is the (?P<object_name>[\w\s]+)","tell me information about (?P<object_name>[\w\s]+)"],
                                 #"talk to me about (?P<object_name>[a-z]+)",  "tell me about what you know of (?P<object_name>[a-z]+)",
@@ -115,11 +114,12 @@ class Agent():
         elif key == "ask_about_object":
             object_name = match.group("object_name")
             print(object_name)
-            object_name= object_name.lower()
+            object_name2= object_name.lower()
             msg = ""
             items = db.showRowsODB()
             for item in items:
-                if item[1] == object_name:
+                if item[1] == object_name or item[1] == object_name2 \
+                            or (item[1].lower()) == object_name or (item[1].lower()) == object_name2:
                     msg = "The following information about " + item[1] + " are available:\n"
                     pos = item[2]
                     info = item[3]

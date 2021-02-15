@@ -20,7 +20,7 @@ if __name__ == "__main__":
     agent = Agent("FC-21", speaker, listener)
 
     print(Back.BLUE + Fore.LIGHTBLACK_EX +  "Initializing the chatbot...")
-    init_message = "Hi" # human, i'm an office robot, how can i help you?"
+    init_message = "Hi human, i'm an office robot, how can i help you?"
     print( Fore.LIGHTYELLOW_EX + init_message)
     speaker.speak(init_message)
 
